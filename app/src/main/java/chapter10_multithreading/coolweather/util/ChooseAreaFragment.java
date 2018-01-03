@@ -1,7 +1,6 @@
 package chapter10_multithreading.coolweather.util;
 
 import android.annotation.SuppressLint;
-import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -32,7 +31,7 @@ import okhttp3.Response;
  * Created by 80997 on 2018/1/3.
  */
 
-public class ChooseAreaFragment extends Fragment {
+public class ChooseAreaFragment extends android.support.v4.app.Fragment {
     public static final int LEVEL_PROVINCE = 0;
     public static final int LEVEL_CITY = 1;
     public static final int LEVEL_COUNTY = 2;
@@ -74,7 +73,7 @@ public class ChooseAreaFragment extends Fragment {
         titleText = (TextView) view.findViewById(R.id.title_text);
         backButton = (Button) view.findViewById(R.id.back_button);
         listView = (ListView) view.findViewById(R.id.list_view);
-        adapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1);
+        adapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1,dataList);
         listView.setAdapter(adapter);
         return view;
     }
